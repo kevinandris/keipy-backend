@@ -19,7 +19,7 @@ router.get(
   getUserTransactions
 );
 router.post("/depositFundStripe", express.json(), protect, depositFundStripe);
-router.get("/depositFundFLW", express.json(), protect, depositFundFLW);
 router.post("/webhook", express.raw({ type: "application/json" }), webhook);
+router.get("/depositFundFLW", express.json(), protect, depositFundFLW);
 
 module.exports = router;
