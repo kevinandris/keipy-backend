@@ -53,8 +53,8 @@ const registerUser = asyncHandler(async (req, res) => {
       httpOnly: true,
       expires: new Date(Date.now() + 1000 * 86400),
       /* // TODO in development mode, comment out the 2 properties below, error might occur if we try to login */
-      // secure: true,
-      // sameSite: none,
+      secure: true,
+      sameSite: none,
     });
 
     // Send user data
@@ -108,8 +108,8 @@ const loginUser = asyncHandler(async (req, res) => {
       httpOnly: true,
       expires: new Date(Date.now() + 1000 * 86400),
       /* // TODO - in development mode, comment out those 2, error might occur if we try to login */
-      // secure: true,
-      // sameSite: "none",
+      secure: true,
+      sameSite: "none",
     });
 
     // Send user data
@@ -129,8 +129,8 @@ const logout = asyncHandler(async (req, res) => {
     httpOnly: true,
     expires: new Date(0),
     /* // ! in development mode, comment out those 2, error might occur if we try to login */
-    // secure: true,
-    // sameSite: "none",
+    secure: true,
+    sameSite: "none",
   });
   return res.status(200).json({ message: "Successfully Logged Out" });
 });
